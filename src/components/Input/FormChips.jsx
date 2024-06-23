@@ -1,4 +1,4 @@
-import { memo, useRef } from "react";
+import { useRef } from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import { Chips } from "primereact/chips";
 import FormInputContainer from "./FormInputContainer";

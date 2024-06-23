@@ -5,20 +5,20 @@ import FormDropDown from "./Input/FormDropDown";
 import operatorJSON from "../mock/operator.json";
 import dataTypeToInputType from "../utils/dataTypeToInputType";
 
-const reformatOperatorJSON = (json) => {
+function reformatOperatorJSON(json) {
   const result = [];
   for (const [key, value] of Object.entries(json)) {
     result.push({ value: key, name: value });
   }
   return result;
-};
+}
 
-const getInputOperator = (field, operatorJSON) => {
+function getInputOperator(field, operatorJSON) {
   const inputType = dataTypeToInputType(field?.dataType);
   if (inputType !== "none")
     return reformatOperatorJSON(operatorJSON[inputType]);
   else return [];
-};
+}
 
 export default function FormOperatorField({ itemName }) {
   const [operator, setOperator] = useState([]);

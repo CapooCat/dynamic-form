@@ -1,4 +1,4 @@
-import { memo, useMemo, useRef } from "react";
+import { useMemo, useRef } from "react";
 import { Controller, useFormContext, useWatch } from "react-hook-form";
 import { InputNumber } from "primereact/inputnumber";
 import FormInputContainer from "./FormInputContainer";
@@ -20,7 +20,7 @@ function InputNumberWithRange({
   const { invalid, message } = useFieldError(thisField.name);
   const input = useRef(null);
 
-  const defineType = (rangeValue, is) => {
+  const insertRangeType = (rangeValue, is) => {
     switch (is) {
       case "notMoreThan":
         return { max: rangeValue };
@@ -34,7 +34,7 @@ function InputNumberWithRange({
       <>
         <InputNumber
           {...props}
-          {...defineType(rangeValue, is)}
+          {...insertRangeType(rangeValue, is)}
           onValueChange={(e) => thisField.onChange(e.value)}
           value={thisField.value ?? null}
           className="input-number-range"

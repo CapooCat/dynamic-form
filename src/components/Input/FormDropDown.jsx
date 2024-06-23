@@ -1,4 +1,4 @@
-import { memo, useRef } from "react";
+import { useRef } from "react";
 import { Dropdown } from "primereact/dropdown";
 import { Controller, useFormContext } from "react-hook-form";
 import FormInputContainer from "./FormInputContainer";
