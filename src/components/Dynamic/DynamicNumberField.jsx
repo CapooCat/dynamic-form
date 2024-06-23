@@ -1,14 +1,14 @@
 import FormMinMax from "../Input/FormMinMax";
 import FormNumber from "../Input/FormNumber";
 
-const getDataType = (value) => {
+function getDataType(value) {
   switch (value) {
     case "Long":
       return 0;
     case "Double":
       return 1;
   }
-};
+}
 
 export default function DynamicNumberField({ itemName, operator, dataType }) {
   switch (operator) {
