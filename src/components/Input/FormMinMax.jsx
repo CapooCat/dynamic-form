@@ -1,4 +1,4 @@
-import { useMemo, useRef } from "react";
+import { memo, useMemo, useRef } from "react";
 import { Controller, useFormContext, useWatch } from "react-hook-form";
 import { InputNumber } from "primereact/inputnumber";
 import FormInputContainer from "./FormInputContainer";
@@ -51,44 +51,49 @@ function InputNumberWithRange({
   );
 }
 
-export default function FormMinMax(props) {
+const FormMinMax = memo(function FormMinMax(props) {
   const { control } = useFormContext();
 
-  return (
-    <FormInputContainer title={props.title}>
-      <div className="flex gap-2 md:w-[200px] w-full">
-        <Controller
-          name={`${props.name}.min`}
-          control={control}
-          defaultValue={null}
-          rules={{ required: "Must not be empty", ...props.rules }}
-          render={({ field }) => (
-            <InputNumberWithRange
-              thisField={field}
-              is="notMoreThan"
-              selectedField={`${props.name}.max`}
-              placeholder={props.minplaceholder}
-              props={props}
-            />
-          )}
-        />
+  return useMemo(
+    () => (
+      <FormInputContainer title={props.title}>
+        <div className="flex gap-2 md:w-[200px] w-full">
+          <Controller
+            name={`${props.name}.min`}
+            control={control}
+            defaultValue={null}
+            rules={{ required: "Must not be empty", ...props.rules }}
+            render={({ field }) => (
+              <InputNumberWithRange
+                thisField={field}
+                is="notMoreThan"
+                selectedField={`${props.name}.max`}
+                placeholder={props.minplaceholder}
+                props={props}
+              />
+            )}
+          />
 
-        <Controller
-          name={`${props.name}.max`}
-          control={control}
-          defaultValue={null}
-          rules={{ required: "Must not be empty", ...props.rules }}
-          render={({ field }) => (
-            <InputNumberWithRange
-              thisField={field}
-              is="notLessThan"
-              selectedField={`${props.name}.min`}
-              placeholder={props.maxplaceholder}
-              props={props}
-            />
-          )}
-        />
-      </div>
-    </FormInputContainer>
+          <Controller
+            name={`${props.name}.max`}
+            control={control}
+            defaultValue={null}
+            rules={{ required: "Must not be empty", ...props.rules }}
+            render={({ field }) => (
+              <InputNumberWithRange
+                thisField={field}
+                is="notLessThan"
+                selectedField={`${props.name}.min`}
+                placeholder={props.maxplaceholder}
+                props={props}
+              />
+            )}
+          />
+        </div>
+      </FormInputContainer>
+    ),
+    [props]
   );
-}
+});
+
+export default FormMinMax;
