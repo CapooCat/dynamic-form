@@ -14,7 +14,7 @@ export default function FormBody() {
     );
   else
     return (
-      <section className="w-full flex justify-center py-8">
+      <section className="md:h-[500px] h-[70svh] w-full flex justify-center py-8">
         <h1>Please add a field</h1>
       </section>
     );
