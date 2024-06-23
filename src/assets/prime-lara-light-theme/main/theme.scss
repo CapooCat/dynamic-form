@@ -1,0 +1,13 @@
+$primaryColor: #8e00e8 !default;
+$primaryLightColor: #dfc9ec !default;
+$primaryDarkColor: #7d02ca !default;
+$primaryDarkerColor: #6a00ac !default;
+$primaryTextColor: #ffffff !default;
+
+$highlightBg: #dfc9ec !default;
+$highlightTextColor: $primaryDarkerColor !default;
+
+@import "../_variables";
+@import "./_fonts";
+@import "../../prime-theme-base/components";
+@import "../_extensions";

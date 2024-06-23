@@ -1,0 +1,46 @@
+@layer tailwind-base, primereact, tailwind-utilities;
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+
+@import "./prime-lara-light-theme/main/theme.scss";
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 14px;
+
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @apply flex justify-center;
+}
+
+.date-input {
+  .p-inputtext {
+    @apply md:w-[160px];
+  }
+
+  .p-button {
+    @apply py-2 px-0 md:w-full w-10;
+  }
+}
+
+.input-number-range {
+  .p-inputtext {
+    @apply w-[50%];
+  }
+}
