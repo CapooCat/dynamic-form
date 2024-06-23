@@ -27,7 +27,6 @@ const FormDropDown = memo(function FormDropDown(props) {
               value={field.value ?? null}
               options={props.options ?? []}
               resetFilterOnHide
-              filterInputAutoFocus
               filter
               invalid={invalid}
             />
