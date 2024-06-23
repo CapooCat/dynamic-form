@@ -6,6 +6,15 @@ import useFieldError from "../../hooks/useFieldError";
 import isDateArray from "../../utils/isDateArray";
 import FormError from "./FormError";
 
+function checkDateType(mode, value) {
+  switch (mode) {
+    case "range":
+      return isDateArray(value) ? value : [];
+    default:
+      return value;
+  }
+}
+
 export default function FormDate(props) {
   const { control } = useFormContext();
   const { invalid, message } = useFieldError(props.name);
@@ -25,7 +34,7 @@ export default function FormDate(props) {
             showIcon
             inputRef={input}
             invalid={invalid}
-            value={isDateArray(field.value) ? field.value : []}
+            value={checkDateType(props.selectionMode, field.value)}
           />
           <FormError target={input.current} message={message} />
         </FormInputContainer>
