@@ -57,9 +57,9 @@ export default function FormItem({ index }) {
         <FormDynamicField itemName={`${name}.${index}`} />
 
         <Button
-          className="p-2 mb-auto mt-8 ml-auto !w-full"
+          className="p-2 mt-auto ml-auto !w-full"
           pt={{ label: "flex justify-center" }}
-          label={<IconTrash size={21} />}
+          label={<IconTrash size={18} />}
           onClick={() => remove(index)}
         />
       </li>
