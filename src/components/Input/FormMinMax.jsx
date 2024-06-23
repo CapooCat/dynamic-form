@@ -56,7 +56,7 @@ export default function FormMinMax(props) {
 
   return (
     <FormInputContainer title={props.title}>
-      <div className="flex gap-2 w-[200px]">
+      <div className="flex gap-2 md:w-[200px] w-full">
         <Controller
           name={`${props.name}.min`}
           control={control}
