@@ -35,6 +35,9 @@ const FormDate = memo(function FormDate(props) {
               showIcon
               inputRef={input}
               invalid={invalid}
+              yearRange="1900:2100"
+              yearNavigator={true}
+              monthNavigator={true}
               value={checkDateType(props.selectionMode, field.value)}
             />
             <FormError target={input.current} message={message} />

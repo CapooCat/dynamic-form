@@ -13,14 +13,14 @@ export default function FormHeader() {
           tooltip="Reset"
           tooltipOptions={{ position: "top" }}
           className="w-fit h-fit p-2"
-          label={<IconRestore stroke={1.5} />}
+          label={<IconRestore size={21} />}
           onClick={() => remove()}
         />
         <Button
           tooltip="Add a field"
           tooltipOptions={{ position: "top" }}
           className="w-fit h-fit p-2"
-          label={<IconPlus stroke={1.5} />}
+          label={<IconPlus size={21} />}
           onClick={() => append({ field: "", operator: "", value: "" })}
         />
       </div>

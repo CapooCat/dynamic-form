@@ -18,6 +18,7 @@
   font-size: 14px;
 
   color: rgba(255, 255, 255, 0.87);
+  color-scheme: dark;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -26,7 +27,39 @@
 }
 
 body {
+  background-attachment: fixed;
+  background-image: url("./background.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
   @apply flex justify-center;
+}
+
+.p-dropdown {
+  .p-placeholder {
+    @apply text-gray-600;
+  }
+}
+
+.p-invalid {
+  @apply border-red-500;
+
+  .p-chips-multiple-container,
+  .p-inputnumber-input,
+  .p-inputtext {
+    @apply border-red-500;
+  }
+}
+
+.p-datepicker {
+  tbody td {
+    &.p-datepicker-other-month {
+      @apply text-gray-400;
+    }
+
+    .p-highlight {
+      @apply bg-primary text-white;
+    }
+  }
 }
 
 .date-input {

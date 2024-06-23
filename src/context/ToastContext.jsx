@@ -19,7 +19,7 @@ export function ToastProvider({ children }) {
       <Toast
         ref={toast}
         pt={{
-          message: "backdrop-blur-md",
+          message: "bg-gray-900/50 backdrop-blur-md",
           content: "border-none",
           root: "pt-14",
         }}

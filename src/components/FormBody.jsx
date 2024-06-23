@@ -6,7 +6,7 @@ export default function FormBody() {
 
   if (fields.length)
     return (
-      <ul className="grid gap-4 md:max-h-[500px] max-h-[70svh] overflow-auto md:justify-center py-2">
+      <ul className="grid gap-4 md:h-[500px] h-[70svh] auto-rows-min overflow-auto no-scrollbar md:justify-center py-2">
         {fields.map((item, index) => (
           <FormItem key={item.id} index={index} />
         ))}

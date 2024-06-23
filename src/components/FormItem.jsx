@@ -42,7 +42,7 @@ export default function FormItem({ index }) {
 
   return useMemo(
     () => (
-      <li className="grid border-dashed border-b-2 pb-6 last-of-type:border-0 md:border-0 md:p-0 md:grid-flow-col grid-cols-2 auto-cols-max gap-4">
+      <li className="grid border-dashed border-black border-b-2 pb-6 last-of-type:border-0 md:border-0 md:p-0 md:grid-flow-col grid-cols-2 auto-cols-max gap-4">
         <FormDropDown
           title="Select Field Type"
           name={`${name}.${index}.field`}
@@ -59,7 +59,7 @@ export default function FormItem({ index }) {
         <Button
           className="p-2 mb-auto mt-8 ml-auto !w-full"
           pt={{ label: "flex justify-center" }}
-          label={<IconTrash stroke={1.5} size={21} />}
+          label={<IconTrash size={21} />}
           onClick={() => remove(index)}
         />
       </li>
