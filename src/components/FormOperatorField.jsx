@@ -13,7 +13,7 @@ function reformatOperatorJSON(json) {
   return result;
 }
 
-function getInputOperator(field, operatorJSON) {
+function getInputOperatorData(field, operatorJSON) {
   const inputType = dataTypeToInputType(field?.dataType);
   if (inputType !== "none")
     return reformatOperatorJSON(operatorJSON[inputType]);
@@ -29,7 +29,7 @@ export default function FormOperatorField({ itemName }) {
   });
 
   useEffect(() => {
-    setOperator(getInputOperator(field, operatorJSON));
+    setOperator(getInputOperatorData(field, operatorJSON));
   }, [field]);
 
   return useMemo(

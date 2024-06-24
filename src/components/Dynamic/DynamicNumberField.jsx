@@ -10,7 +10,7 @@ function getDataType(value) {
   }
 }
 
-export default function DynamicNumberField({ itemName, operator, dataType }) {
+export default function DynamicNumberField({ itemName, operator, numberType }) {
   switch (operator) {
     case "between":
       return (
@@ -19,7 +19,7 @@ export default function DynamicNumberField({ itemName, operator, dataType }) {
           name={`${itemName}.value`}
           minplaceholder="Min"
           maxplaceholder="Max"
-          minFractionDigits={getDataType(dataType)}
+          minFractionDigits={getDataType(numberType)}
         />
       );
     default:
@@ -28,7 +28,7 @@ export default function DynamicNumberField({ itemName, operator, dataType }) {
           title="Value"
           name={`${itemName}.value`}
           placeholder="Enter Number"
-          minFractionDigits={getDataType(dataType)}
+          minFractionDigits={getDataType(numberType)}
         />
       );
   }

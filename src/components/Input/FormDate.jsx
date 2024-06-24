@@ -6,7 +6,7 @@ import useFieldError from "../../hooks/useFieldError";
 import isDateArray from "../../utils/isDateArray";
 import FormError from "./FormError";
 
-function checkDateType(mode, value) {
+function initValueByMode(mode, value) {
   switch (mode) {
     case "range":
       return isDateArray(value) ? value : [];
@@ -38,7 +38,7 @@ const FormDate = memo(function FormDate(props) {
               yearRange="1900:2100"
               yearNavigator={true}
               monthNavigator={true}
-              value={checkDateType(props.selectionMode, field.value)}
+              value={initValueByMode(props.selectionMode, field.value)}
             />
             <FormError target={input.current} message={message} />
           </FormInputContainer>
