@@ -21,7 +21,7 @@ export default function FormHeader() {
           tooltipOptions={{ position: "top" }}
           className="w-fit h-fit p-2"
           label={<IconPlus size={21} />}
-          onClick={() => append({ field: "", operator: "", value: "" })}
+          onClick={() => append({ field: null, operator: null, value: null })}
         />
       </div>
     </section>
