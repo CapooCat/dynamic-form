@@ -1,16 +1,17 @@
 import { Button } from "primereact/button";
 import { useFormContext } from "react-hook-form";
 import { useToast } from "../context/ToastContext";
+import processArray from "../utils/processArray";
 
 export default function FormSubmitButton() {
   const { handleSubmit } = useFormContext();
   const { showToast } = useToast();
 
   const onSubmit = (data) => {
-    const reformatedData = data.fieldArray.map((item) => ({
-      ...item,
-      field: item.field?.dataType,
-    }));
+    const reformatedData = processArray(data.fieldArray, {
+      format: true,
+      cleanup: true,
+    });
 
     showToast({
       severity: "success",
@@ -19,8 +20,7 @@ export default function FormSubmitButton() {
       life: 5000,
     });
 
-    data.fieldArray = reformatedData;
-    console.log(data);
+    console.log(reformatedData);
   };
 
   const onError = () => {
