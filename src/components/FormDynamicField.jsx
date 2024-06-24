@@ -49,7 +49,7 @@ function DynamicField({ dataType, operator, name }) {
         <DynamicNumberField
           itemName={name}
           operator={operator}
-          dataType={dataType}
+          numberType={dataType}
         />
       );
   }
