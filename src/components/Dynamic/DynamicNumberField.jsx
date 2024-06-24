@@ -4,9 +4,9 @@ import FormNumber from "../Input/FormNumber";
 function getDataType(value) {
   switch (value) {
     case "Long":
-      return 0;
+      return { minFractionDigits: 0, maxFractionDigits: 0 };
     case "Double":
-      return 1;
+      return { minFractionDigits: 1 };
   }
 }
 
@@ -19,7 +19,7 @@ export default function DynamicNumberField({ itemName, operator, numberType }) {
           name={`${itemName}.value`}
           minplaceholder="Min"
           maxplaceholder="Max"
-          minFractionDigits={getDataType(numberType)}
+          {...getDataType(numberType)}
         />
       );
     default:
@@ -28,7 +28,7 @@ export default function DynamicNumberField({ itemName, operator, numberType }) {
           title="Value"
           name={`${itemName}.value`}
           placeholder="Enter Number"
-          minFractionDigits={getDataType(numberType)}
+          {...getDataType(numberType)}
         />
       );
   }
