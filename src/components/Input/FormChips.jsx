@@ -1,11 +1,11 @@
-import { memo, useMemo, useRef } from "react";
+import { useMemo, useRef } from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import { Chips } from "primereact/chips";
 import FormInputContainer from "./FormInputContainer";
 import isStringArray from "../../utils/isStringArray";
 import FormError from "./FormError";
 
-const FormChips = memo(function FormChips(props) {
+const FormChips = function FormChips(props) {
   const { control } = useFormContext();
   const input = useRef(null);
 
@@ -42,6 +42,6 @@ const FormChips = memo(function FormChips(props) {
       }}
     />
   );
-});
+};
 
 export default FormChips;

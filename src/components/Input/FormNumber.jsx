@@ -1,10 +1,10 @@
-import { memo, useMemo, useRef } from "react";
+import { useMemo, useRef } from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import { InputNumber } from "primereact/inputnumber";
 import FormInputContainer from "./FormInputContainer";
 import FormError from "./FormError";
 
-const FormNumber = memo(function FormNumber(props) {
+const FormNumber = function FormNumber(props) {
   const { control } = useFormContext();
   const input = useRef(null);
 
@@ -39,6 +39,6 @@ const FormNumber = memo(function FormNumber(props) {
       }}
     />
   );
-});
+};
 
 export default FormNumber;

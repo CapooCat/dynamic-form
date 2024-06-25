@@ -1,7 +1,7 @@
 import { IconTrash } from "@tabler/icons-react";
 import { Badge } from "primereact/badge";
 import { Button } from "primereact/button";
-import { memo, useMemo } from "react";
+import { useMemo } from "react";
 import { useFormContext, useWatch } from "react-hook-form";
 import { useFormArray } from "../context/FormArrayContext";
 
@@ -39,7 +39,7 @@ function SelectFieldValueTemplate(option, e) {
   else return <span>{e.placeholder}</span>;
 }
 
-const FormItem = memo(function FormItem({ name, index }) {
+const FormItem = function FormItem({ name, index }) {
   const { control } = useFormContext();
   const { update } = useFormArray();
   const indexValue = useWatch({ control, name: `${name}.${index}` });
@@ -71,6 +71,6 @@ const FormItem = memo(function FormItem({ name, index }) {
       );
     else return <></>;
   }, [index, indexValue]);
-});
+};
 
 export default FormItem;

@@ -1,4 +1,4 @@
-import { memo, useMemo, useRef } from "react";
+import { useMemo, useRef } from "react";
 import { Calendar } from "primereact/calendar";
 import { Controller, useFormContext } from "react-hook-form";
 import FormInputContainer from "./FormInputContainer";
@@ -14,7 +14,7 @@ function initValueByMode(mode, value) {
   }
 }
 
-const FormDate = memo(function FormDate(props) {
+const FormDate = function FormDate(props) {
   const { control } = useFormContext();
   const input = useRef(null);
 
@@ -51,6 +51,6 @@ const FormDate = memo(function FormDate(props) {
       }}
     />
   );
-});
+};
 
 export default FormDate;

@@ -1,10 +1,10 @@
-import { memo, useMemo, useRef } from "react";
+import { useMemo, useRef } from "react";
 import { InputText } from "primereact/inputtext";
 import { Controller, useFormContext } from "react-hook-form";
 import FormInputContainer from "./FormInputContainer";
 import FormError from "./FormError";
 
-const FormText = memo(function FormText(props) {
+const FormText = function FormText(props) {
   const { control } = useFormContext();
   const input = useRef(null);
 
@@ -37,6 +37,6 @@ const FormText = memo(function FormText(props) {
       }}
     />
   );
-});
+};
 
 export default FormText;

@@ -1,4 +1,4 @@
-import { memo, useMemo, useRef } from "react";
+import { useMemo, useRef } from "react";
 import { Controller, useFormContext, useWatch } from "react-hook-form";
 import { InputNumber } from "primereact/inputnumber";
 import FormInputContainer from "./FormInputContainer";
@@ -52,7 +52,7 @@ function InputNumberWithRange({
   );
 }
 
-const FormMinMax = memo(function FormMinMax(props) {
+const FormMinMax = function FormMinMax(props) {
   const { control } = useFormContext();
 
   return (
@@ -102,6 +102,6 @@ const FormMinMax = memo(function FormMinMax(props) {
       </div>
     </FormInputContainer>
   );
-});
+};
 
 export default FormMinMax;

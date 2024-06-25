@@ -1,10 +1,10 @@
-import { memo, useMemo, useRef } from "react";
+import { useMemo, useRef } from "react";
 import { Dropdown } from "primereact/dropdown";
 import { Controller, useFormContext } from "react-hook-form";
 import FormInputContainer from "./FormInputContainer";
 import FormError from "./FormError";
 
-const FormDropDown = memo(function FormDropDown(props) {
+const FormDropDown = function FormDropDown(props) {
   const { control } = useFormContext();
   const input = useRef(null);
 
@@ -44,6 +44,6 @@ const FormDropDown = memo(function FormDropDown(props) {
       }}
     />
   );
-});
+};
 
 export default FormDropDown;
