@@ -41,7 +41,6 @@ export default function FormOperatorField({ itemName }) {
         optionLabel="name"
         optionValue="value"
         placeholder="Select Operator"
-        rules={{ required: "Must not be empty" }}
       />
     ),
     [itemName, operator]

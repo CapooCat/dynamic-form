@@ -65,7 +65,7 @@ const FormItem = function FormItem({ name, index }) {
             className="p-2 mb-auto mt-[1.48em] ml-auto !w-full"
             pt={{ label: "flex justify-center" }}
             label={<IconTrash size={18} />}
-            onClick={() => update(index, {})} //update value sang {} thay vì remove array gây re-render
+            onClick={() => update(index, {})} //update value sang {} thay vì remove index trong array gây heavy re-render
           />
         </li>
       );
